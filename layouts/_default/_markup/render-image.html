@@ -1,0 +1,6 @@
+<figure class="post-image">
+  <a class="fancybox" href="{{ .Destination | safeURL }}" data-fancybox="gallery" data-caption="{{ .PlainText | safeHTML }}">
+    <img src="{{ .Destination | safeURL }}" alt="{{ .Text }}" {{ with .Title}} title="{{ . }}"{{ end }} />
+  </a>
+  <figcaption>{{ .PlainText | safeHTML }}</figcaption>
+</figure>
