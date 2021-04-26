@@ -271,3 +271,68 @@ Even.responsiveTable = function() {
   }
 };
 
+Even.wrapFigures = function (figures) {
+  if (figures.length < 2) {
+    return;
+  }
+  const galleryContainer = document.createElement('div');
+  galleryContainer.className = 'post-gallery';
+
+  const first = figures[0];
+  const parentNode = first.parentNode;
+
+  parentNode.insertBefore(galleryContainer, first)
+
+  function makeGalleryStyle() {
+    for (const figure of figures) {
+      const img = figure.getElementsByTagName('img')[0];
+      figure.style.flexGrow = (img.naturalWidth * 100) / img.naturalHeight;
+      figure.style.flexBasis = `${(img.naturalWidth * 240) / img.naturalHeight}px`;
+    }
+  }
+
+  let loadedCount = 0;
+  function imageLoaded() {
+    loadedCount += 1;
+    if (loadedCount >= figures.length) {
+      makeGalleryStyle();
+    }
+  }
+
+  for (const figure of figures) {
+    const img = figure.getElementsByTagName('img')[0];
+
+    if (img.complete) {
+      imageLoaded();
+    } else {
+      img.addEventListener('load', function () {
+        imageLoaded();
+      });
+    }
+
+    galleryContainer.appendChild(figure);
+  }
+}
+
+// Inspired by https://github.com/CaiJimmy/hugo-theme-stack
+Even.gallery = function () {
+  const figures = document.querySelectorAll('.post-content figure');
+
+  let currentGallery = []
+
+  for (const figure of figures) {
+    if (currentGallery.length === 0) {
+      // First iteration
+      currentGallery = [figure];
+    } else if (figure.previousElementSibling === currentGallery[currentGallery.length - 1]) {
+      currentGallery.push(figure);
+    } else if (currentGallery.length) {
+      this.wrapFigures(currentGallery)
+      currentGallery = [figure]
+    }
+  }
+
+  if (currentGallery.length) {
+    this.wrapFigures(currentGallery)
+  }
+}

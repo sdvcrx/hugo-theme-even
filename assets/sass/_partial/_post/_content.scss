@@ -79,6 +79,22 @@
     }
   }
 
+  .post-gallery {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+
+    figure {
+      margin: 0;
+      flex: 1;
+
+      & + figure {
+        margin-left: 4px;
+      }
+    }
+  }
+
   img {
     display: inline-block;
     max-width: 100%;
