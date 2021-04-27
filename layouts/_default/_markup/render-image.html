@@ -2,5 +2,5 @@
   <a class="fancybox" href="{{ .Destination | safeURL }}" data-fancybox="gallery" data-caption="{{ .PlainText | safeHTML }}">
     <img src="{{ .Destination | safeURL }}" alt="{{ .Text }}" {{ with .Title}} title="{{ . }}"{{ end }} loading="lazy" />
   </a>
-  <figcaption>{{ .PlainText | safeHTML }}</figcaption>
+  {{ if .PlainText }}<figcaption>{{ .PlainText | safeHTML }}</figcaption>{{ end }}
 </figure>
