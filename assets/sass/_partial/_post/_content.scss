@@ -180,11 +180,24 @@
     }
   }
 
+  // copy from typlog
   hr {
-    margin: 1rem 0;
-    position: relative;
-    border-top: 2px dashed $theme-color;
-    border-bottom: none;
+    box-sizing: initial;
+    height: 0;
+    overflow: visible;
+    display: block;
+    border: 0;
+    margin: 2.24em auto 2.86em;
+    width: 90%;
+    max-width: 100px;
+
+    &:after {
+      color: rgba(0,0,0,.2);
+      font-size: 1.1em;
+      display: block;
+      content: "* * *";
+      text-align: center;
+    }
   }
 
   .footnote-ref {
