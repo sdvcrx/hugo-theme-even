@@ -18,6 +18,13 @@ Even.backToTop = function() {
   });
 };
 
+Even.getScript = function(url, cb) {
+  const script = document.createElement('script');
+  script.src = url;
+  script.onload = cb;
+  document.body.appendChild(script);
+}
+
 Even.mobileNavbar = function() {
   const $mobileNav = $('#mobile-navbar');
   const $mobileNavIcon = $('.mobile-navbar-icon');

@@ -1,6 +1,10 @@
 $(document).ready(function () {
   Even.backToTop();
-  Even.mobileNavbar();
+  // css: (max-width: 800px)
+  // only enable on mobile
+  if (window.innerWidth <= 800 && window.URL_slideout) {
+    Even.getScript(window.URL_slideout, Even.mobileNavbar);
+  }
   Even.toc();
   Even.fancybox();
   Even.gallery();
