@@ -78,15 +78,13 @@ $global-headings: (
 // Padding of the site header.
 $header-padding: 20px 20px !default;
 
+$font-apple-chancery-url: '../fonts/chancery/apple-chancery-webfont.woff2' !default;
+$font-iconfont-url: '../fonts/iconfont/iconfont.woff2' !default;
+
 // Font family: Chancery
 @font-face {
   font-family: 'Chancery';
-  src: url('../fonts/chancery/apple-chancery-webfont.eot');
-  src: local('Apple Chancery'), url('../fonts/chancery/apple-chancery-webfont.eot?#iefix') format('embedded-opentype'),
-  url('../fonts/chancery/apple-chancery-webfont.woff2') format('woff2'),
-  url('../fonts/chancery/apple-chancery-webfont.woff') format('woff'),
-  url('../fonts/chancery/apple-chancery-webfont.ttf') format('truetype'),
-  url('../fonts/chancery/apple-chancery-webfont.svg#apple-chancery') format('svg');
+  src: url($font-apple-chancery-url) format('woff2');
   font-weight: lighter;
   font-style: normal;
   font-display: swap;
