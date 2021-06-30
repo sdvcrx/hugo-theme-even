@@ -21,9 +21,10 @@
 
   .mobile-header-logo {
     display: inline-block;
-    margin-right: 50px;
+    padding-right: 50px;
 
     .logo {
+      display: block;
       font-size: 22px;
       line-height: $mobile-navbar-height;
       font-family: $logo-font-family;
