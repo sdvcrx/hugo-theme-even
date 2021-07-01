@@ -2,16 +2,32 @@
 
 const Even = {};
 
+function debounce(fn, wait) {
+  let timeout
+  return function() {
+    const ctx = this;
+    const args = arguments;
+    if (timeout) {
+      clearTimeout(timeout)
+    }
+    timeout = setTimeout(function () {
+      fn.apply(ctx, args)
+    }, wait);
+  }
+}
+
 Even.backToTop = function() {
   const $backToTop = $('#back-to-top');
 
-  $(window).scroll(function() {
-    if ($(window).scrollTop() > 100) {
+  const $window = $(window);
+
+  $window.scroll(debounce(function() {
+    if ($window.scrollTop() > 100) {
       $backToTop.fadeIn(1000);
     } else {
       $backToTop.fadeOut(1000);
     }
-  });
+  }, 100));
 
   $backToTop.click(function() {
     $('body,html').animate({scrollTop: 0});
