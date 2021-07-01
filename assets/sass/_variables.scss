@@ -87,7 +87,7 @@ $font-iconfont-url: '../fonts/iconfont/iconfont.woff2' !default;
   src: url($font-apple-chancery-url) format('woff2');
   font-weight: lighter;
   font-style: normal;
-  font-display: swap;
+  font-display: fallback;
 }
 
 // Font size of the logo.
