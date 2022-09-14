@@ -339,7 +339,7 @@ Even.wrapFigures = function (figures) {
 
 // Inspired by https://github.com/CaiJimmy/hugo-theme-stack
 Even.gallery = function () {
-  const figures = document.querySelectorAll('.post-content figure');
+  const figures = document.querySelectorAll('.post-content .post-image');
 
   let currentGallery = []
 

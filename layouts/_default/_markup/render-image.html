@@ -1,6 +1,3 @@
-<figure class="post-image">
-  <a class="fancybox" href="{{ .Destination | safeURL }}" data-fancybox="gallery" data-caption="{{ .PlainText | safeHTML }}">
-    <img src="{{ .Destination | safeURL }}" alt="{{ .Text }}" {{ with .Title}} title="{{ . }}"{{ end }} loading="lazy" />
-  </a>
-  {{ if .PlainText }}<figcaption>{{ .PlainText | safeHTML }}</figcaption>{{ end }}
-</figure>
+<a class="post-image fancybox" href="{{ .Destination | safeURL }}" data-fancybox="gallery" title="{{ .PlainText | safeHTML }}" data-caption="{{ .PlainText | safeHTML }}">
+  <img src="{{ .Destination | safeURL }}" alt="{{ .Text }}" {{ with .Title}} title="{{ . }}"{{ end }} loading="lazy" />
+</a>

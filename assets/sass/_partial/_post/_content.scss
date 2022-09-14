@@ -85,11 +85,11 @@
     flex-direction: row;
     justify-content: center;
 
-    figure {
+    .post-image {
       margin: 0;
       flex: 1;
 
-      & + figure {
+      & + .post-image {
         margin-left: 4px;
       }
     }
