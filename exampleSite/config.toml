@@ -149,6 +149,10 @@ copyright = ""            # default: author.name ↓        # 默认为下面配
     clientId = ""           # Your client ID
     clientSecret = ""       # Your client secret
 
+  [params.remark42]         # Remark  is a privacy-focused lightweight commenting engine. see https://remark42.com/
+    host = ""               # Your host
+    siteId = ""             # Your siteId
+
   # Valine.
   # You can get your appid and appkey from https://leancloud.cn
   # more info please open https://valine.js.org
