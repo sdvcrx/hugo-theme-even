@@ -10,7 +10,7 @@ tags = ["responsive", "blog", "simple", "clean", "highlight.js", "syntax highlig
 features = ["responsive", "blog", "simple", "clean", "highlight.js", "syntax highlighting"]
 min_version = "0.60.0"
 
-[author]
+[params.author]
   name = "olOwOlo"
   homepage = "https://github.com/olOwOlo"
 

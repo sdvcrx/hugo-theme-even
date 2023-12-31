@@ -20,9 +20,6 @@ disqusShortname = ""      # disqus_shortname
 googleAnalytics = ""      # UA-XXXXXXXX-X
 copyright = ""            # default: author.name ↓        # 默认为下面配置的author.name ↓
 
-[author]                  # essential                     # 必需
-  name = "olOwOlo"
-
 [sitemap]                 # essential                     # 必需
   changefreq = "weekly"
   priority = 0.5
@@ -113,6 +110,9 @@ copyright = ""            # default: author.name ↓        # 默认为下面配
 
   # Show language selector for multilingual site.
   showLanguageSelector = false
+
+  [params.author]                  # essential                     # 必需
+    name = "olOwOlo"
 
   [params.publicCDN]        # load these files from public cdn                          # 启用公共CDN，需自行定义
     enable = true
